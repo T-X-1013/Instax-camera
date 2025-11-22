@@ -1,0 +1,7 @@
+{
+  "name": "Copy of Retro Instant Camera",
+  "description": "A virtual instant camera experience. Take photos that develop slowly and arrange them on your wall.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

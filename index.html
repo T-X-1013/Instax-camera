@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Retro Instant Camera</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              hand: ['"Permanent Marker"', 'cursive'],
+              sans: ['Roboto', 'sans-serif'],
+            },
+            colors: {
+              cream: '#f2f0e6',
+              'cream-dark': '#e0ded4',
+              charcoal: '#2a2a2a',
+              leather: '#1a1a1a',
+              silver: '#d1d5db',
+              'silver-dark': '#9ca3af',
+            },
+            animation: {
+              'flash': 'flash 0.2s ease-out',
+            },
+            keyframes: {
+              flash: {
+                '0%': { opacity: 0 },
+                '50%': { opacity: 0.8, background: 'white' },
+                '100%': { opacity: 0 }
+              }
+            },
+            backgroundImage: {
+              'leather-texture': "url('data:image/svg+xml,%3Csvg width=\\'4\\' height=\\'4\\' viewBox=\\'0 0 4 4\\' xmlns=\\'http://www.w3.org/2000/svg\\'%3E%3Cpath d=\\'M1 3h1v1H1V3zm2-2h1v1H3V1z\\' fill=\\'%23333\\' fill-opacity=\\'0.4\\' fill-rule=\\'evenodd\\'/%3E%3C/svg%3E')",
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        background-color: #fce7f3; /* Pink-100 base */
+      }
+      
+      /* Hazy/Misty Background Effect */
+      .hazy-bg {
+        background: radial-gradient(circle at 50% 50%, #fbcfe8 0%, #f9a8d4 50%, #f472b6 100%);
+        filter: blur(40px);
+        position: absolute;
+        top: -20%;
+        left: -20%;
+        right: -20%;
+        bottom: -20%;
+        z-index: -1;
+        opacity: 0.6;
+        animation: moveMist 20s infinite alternate;
+      }
+
+      @keyframes moveMist {
+        0% { transform: scale(1); }
+        100% { transform: scale(1.1); }
+      }
+
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #555;
+        border-radius: 4px;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
